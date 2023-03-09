@@ -1,0 +1,165 @@
+/* Variables **************************************************/
+:root {
+    --dark: #151515;
+    --light: #FFFFFF;
+    --moon: #F9F9F9;
+    --sun: #F5DE1A;
+}
+
+/* Reset ******************************************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+ul, ol { list-style: none; }
+
+/* Typography *************************************************/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Tilt Neon', cursive;
+}
+.text-small { font-size: 0.8em; }
+.text-normal { font-size: 1em; }
+.text-medium { font-size: 1.5em; }
+.text-large { font-size: 2em; }
+
+/* Sidebar style ***********************************************/
+.nev button { 
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    color: #F9F9F9;
+    transition: transform 400ms ease-in;
+}
+
+/* État ouvert */
+.sidebar {
+    display: none;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    text-align: center;
+    background-color: var(--sun);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.35);
+    transition: width 400ms ease-in;
+}
+
+.nav_items {
+    display: none;
+}
+
+/* État fermé (Écris ton code ici ⬇) */
+.nev.active button {
+    cursor: pointer;
+    transform: rotate(-360deg);
+    transition: transform 400ms ease-in;
+  }
+  
+
+.sidebar.active {
+    display: block;
+    overflow: hidden;
+    width: 0px;
+    transition: width 400ms ease-in;
+  }
+
+
+
+
+
+
+
+
+/* Global style ***********************************************/
+nav {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 1em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.35);
+}
+.nav_items { gap: 1em; }
+main header {
+    background-color: var(--sun);
+    padding: 8.5em 5em 5em 5em;
+}
+main section { justify-content: center; background-color: var(--moon); }
+.concept_item, .card {
+    background-color: var(--moon);
+    padding: 1em;
+    margin: 2em;
+    width: 40%;
+    border-radius: 1em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 250ms ease-in;
+}
+.concept_item:hover {
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+    transition: box-shadow 250ms ease-in;
+}
+.concept_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1em;
+}
+.concept_item div { margin-top: 8px; }
+.concept_item div svg { color: rgba(0, 0, 0, 0.35); }
+.concept_item h4 {
+    background-color: var(--sun);
+    padding: 0.5em;
+    width: 100px;
+    border-radius: 2em;
+    transition: background-color 250ms ease-in;
+}
+.concept_item h4:hover {
+    background-color: var(--dark);
+    color: var(--moon);
+    cursor: pointer;
+    transition: background-color 250ms ease-in;
+}
+
+/* Responsive settings *******************************************/
+@media screen and (max-width: 768px) {
+    .nav_items { display: none !important; }
+    .concept_item {
+        width: 80%;
+    }
+}
+
+/* Flexbox settings *******************************************/
+.flex { display: flex; }
+.flex-row { flex-direction: row; }
+.flex-column { flex-direction: column; }
+.flex-center { justify-content: center; align-items: center; }
+.flex-justify-space-between { justify-content: space-between; }
+.flex-justify-space-around { justify-content: space-around; }
+.flex-justify-center { justify-content: center; }
+.flex-justify-end { justify-content: flex-end; }
+.flex-justify-start { justify-content: flex-start; }
+.flex-justify-evenly { justify-content: space-evenly; }
+.flex-justify-items-start { justify-items: flex-start; }
+.flex-justify-items-center { justify-items: center; }
+.flex-justify-items-end { justify-items: flex-end; }
+.flex-justify-items-stretch { justify-items: stretch; }
+.flex-justify-items-baseline { justify-items: baseline; }
+.flex-align-start { align-items: flex-start; }
+.flex-align-center { align-items: center; }
+.flex-align-end { align-items: flex-end; }
+.flex-align-stretch { align-items: stretch; }
+.flex-align-baseline { align-items: baseline; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-wrap-reverse { flex-wrap: wrap-reverse; }
+.flex-wrap-nowrap { flex-wrap: nowrap; }
+.flex-align-content-start { align-content: flex-start; }
+.flex-align-content-center { align-content: center; }
+.flex-align-content-end { align-content: flex-end; }
+.flex-align-content-stretch { align-content: stretch; }
+.flex-align-content-between { align-content: space-between; }
+.flex-align-content-around { align-content: space-around; }
+.flex-align-content-evenly { align-content: space-evenly; }
